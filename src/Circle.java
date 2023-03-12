@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import static java.lang.Math.pow;
 
 public class Circle extends Figure {
@@ -19,6 +21,13 @@ public class Circle extends Figure {
 
     @Override
     double calculateP() {
-        return  2 * Math.PI * r;
+        return 2 * Math.PI * r;
+    }
+
+    void calculate() throws IOException {
+        System.out.println("Enter radius");
+        setR(Double.parseDouble(reader.readLine()));
+        System.out.println("S: " + calculateS());
+        System.out.println("P: " + calculateP());
     }
 }

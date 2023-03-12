@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Rectangle extends Figure {
     private double a;
     private double b;
@@ -27,5 +29,15 @@ public class Rectangle extends Figure {
     @Override
     double calculateP() {
         return ((this.a*2)+(this.b*2));
+    }
+
+    @Override
+    void calculate() throws IOException {
+        System.out.println("Enter width");
+        setA(Double.parseDouble(reader.readLine()));
+        System.out.println("Enter height");
+        setB(Double.parseDouble(reader.readLine()));
+        System.out.println("S: " + calculateS());
+        System.out.println("P: " + calculateP());
     }
 }

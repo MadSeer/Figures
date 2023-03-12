@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import static java.lang.Math.sqrt;
 
 public class Triangle extends Figure{
@@ -36,5 +38,17 @@ public class Triangle extends Figure{
     @Override
     double calculateP() {
         return (this.a+this.b+this.c);
+    }
+
+    @Override
+    void calculate() throws IOException {
+        System.out.println("Enter 1 side");
+        setA(Double.parseDouble(reader.readLine()));
+        System.out.println("Enter 2 side");
+        setB(Double.parseDouble(reader.readLine()));
+        System.out.println("Enter 3 side");
+        setC(Double.parseDouble(reader.readLine()));
+        System.out.println("S: " + calculateS());
+        System.out.println("P: " + calculateP());
     }
 }

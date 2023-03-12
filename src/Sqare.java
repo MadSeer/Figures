@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import static java.lang.Math.pow;
 
 public class Sqare extends Figure {
@@ -20,4 +22,14 @@ public class Sqare extends Figure {
     double calculateP() {
         return a * 4;
     }
+
+    @Override
+    void calculate() throws IOException {
+        System.out.println("Enter side lenght");
+        setA(Double.parseDouble(reader.readLine()));
+        System.out.println("S: " + calculateS());
+        System.out.println("P: " + calculateP());
+    }
+
+
 }
