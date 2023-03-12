@@ -14,13 +14,23 @@ public class MyFrame extends JFrame {
 
         JPanel panel;
         switch (action) {
+            case "Circle" -> {
+                panel = new JPanel() {
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+                        g.setColor(Color.MAGENTA);
+                        g.fillOval(640, 360, a, a);
+                    }
+                };
+            }
             case "Rectangle" -> {
                 panel = new JPanel() {
                     @Override
                     protected void paintComponent(Graphics g) {
                         super.paintComponent(g);
                         g.setColor(Color.MAGENTA);
-                        g.fillRect(100, 100, a, b);
+                        g.fillRect(640, 360, a, b);
                     }
                 };
             }
@@ -30,7 +40,7 @@ public class MyFrame extends JFrame {
                     protected void paintComponent(Graphics g) {
                         super.paintComponent(g);
                         g.setColor(Color.MAGENTA);
-                        g.fillRect(100, 100, a, b);
+                        g.fillRect(640, 360, a, a);
                     }
                 };
             }

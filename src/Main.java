@@ -20,7 +20,11 @@ public class Main {
                 circle.setR(Double.parseDouble(reader.readLine()));
                 System.out.println("S: " + circle.calculateS());
                 System.out.println("P: " + circle.calculateP());
-
+                SwingUtilities.invokeLater(() -> {
+                    MyFrame frame = new MyFrame("Circle",
+                            Math.toIntExact(Math.round(circle.getR())), 0, 0);
+                    frame.setVisible(true);
+                });
             }
             case "2" -> {
                 Sqare sqare = new Sqare();
@@ -28,6 +32,11 @@ public class Main {
                 sqare.setA(Double.parseDouble(reader.readLine()));
                 System.out.println("S: " + sqare.calculateS());
                 System.out.println("P: " + sqare.calculateP());
+                SwingUtilities.invokeLater(() -> {
+                    MyFrame frame = new MyFrame("Sqare",
+                            Math.toIntExact(Math.round(sqare.getA())), 0, 0);
+                    frame.setVisible(true);
+                });
             }
             case "3" -> {
                 Rectangle rectangle = new Rectangle();
@@ -37,6 +46,12 @@ public class Main {
                 rectangle.setB(Double.parseDouble(reader.readLine()));
                 System.out.println("S: " + rectangle.calculateS());
                 System.out.println("P: " + rectangle.calculateP());
+                SwingUtilities.invokeLater(() -> {
+                    MyFrame frame = new MyFrame("Rectangle",
+                            Math.toIntExact(Math.round(rectangle.getA())),
+                            Math.toIntExact(Math.round(rectangle.getB())), 0);
+                    frame.setVisible(true);
+                });
             }
             case "4" -> {
                 Triangle triangle = new Triangle();
