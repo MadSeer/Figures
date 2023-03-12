@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import static java.lang.Math.pow;
 
 public class Sqare extends Figure {
+    ReaderCallback callback = new ReaderCallbackImp();
+
     private double a;
 
     public void setA(double a) {
@@ -27,9 +29,8 @@ public class Sqare extends Figure {
 
     @Override
     void calculate() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter side lenght");
-        setA(Double.parseDouble(reader.readLine()));
+        setA(Double.parseDouble(callback.read().readLine()));
         System.out.println("S: " + calculateS());
         System.out.println("P: " + calculateP());
     }

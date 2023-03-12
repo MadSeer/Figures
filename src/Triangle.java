@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import static java.lang.Math.sqrt;
 
 public class Triangle extends Figure{
+    ReaderCallback callback = new ReaderCallbackImp();
+
     private double a;
     private double b;
     private double c;
@@ -44,13 +46,12 @@ public class Triangle extends Figure{
 
     @Override
     void calculate() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter 1 side");
-        setA(Double.parseDouble(reader.readLine()));
+        setA(Double.parseDouble(callback.read().readLine()));
         System.out.println("Enter 2 side");
-        setB(Double.parseDouble(reader.readLine()));
+        setB(Double.parseDouble(callback.read().readLine()));
         System.out.println("Enter 3 side");
-        setC(Double.parseDouble(reader.readLine()));
+        setC(Double.parseDouble(callback.read().readLine()));
         System.out.println("S: " + calculateS());
         System.out.println("P: " + calculateP());
     }

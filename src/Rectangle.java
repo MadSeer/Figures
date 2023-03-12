@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Rectangle extends Figure {
+    ReaderCallback callback = new ReaderCallbackImp();
+
     private double a;
     private double b;
 
@@ -35,11 +37,10 @@ public class Rectangle extends Figure {
 
     @Override
     void calculate() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter width");
-        setA(Double.parseDouble(reader.readLine()));
+        setA(Double.parseDouble(callback.read().readLine()));
         System.out.println("Enter height");
-        setB(Double.parseDouble(reader.readLine()));
+        setB(Double.parseDouble(callback.read().readLine()));
         System.out.println("S: " + calculateS());
         System.out.println("P: " + calculateP());
     }

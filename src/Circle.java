@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import static java.lang.Math.pow;
 
 public class Circle extends Figure {
+    ReaderCallback callback = new ReaderCallbackImp();
     private double r;
 
     public void setR(double r) {
@@ -27,9 +28,8 @@ public class Circle extends Figure {
     }
 
     void calculate() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter radius");
-        setR(Double.parseDouble(reader.readLine()));
+        setR(Double.parseDouble(callback.read().readLine()));
         System.out.println("S: " + calculateS());
         System.out.println("P: " + calculateP());
     }
