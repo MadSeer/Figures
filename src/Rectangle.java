@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Rectangle extends Figure {
     private double a;
@@ -33,6 +35,7 @@ public class Rectangle extends Figure {
 
     @Override
     void calculate() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter width");
         setA(Double.parseDouble(reader.readLine()));
         System.out.println("Enter height");

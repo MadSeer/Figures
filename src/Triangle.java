@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import static java.lang.Math.sqrt;
 
@@ -42,6 +44,7 @@ public class Triangle extends Figure{
 
     @Override
     void calculate() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter 1 side");
         setA(Double.parseDouble(reader.readLine()));
         System.out.println("Enter 2 side");

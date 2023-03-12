@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import static java.lang.Math.pow;
 
@@ -25,6 +27,7 @@ public class Circle extends Figure {
     }
 
     void calculate() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter radius");
         setR(Double.parseDouble(reader.readLine()));
         System.out.println("S: " + calculateS());
